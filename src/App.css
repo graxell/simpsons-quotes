@@ -1,38 +1,176 @@
-.App {
-  text-align: center;
+:root {
+  --lightBlue: rgb(112, 209, 255);
+  --yellow: rgb(254, 221, 0);
+  --black: rgb(0, 0, 0);
+  --white: rgb(255, 255, 255);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "merienda-bold";
+  src: url(./fonts/Merienda-Bold.ttf) format("truetype");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: "merienda-regular";
+  src: url(./fonts/Merienda-Regular.ttf) format("truetype");
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: var(--lightBlue);
+  font-size: 16px;
+  font-family: "merienda-regular";
+}
+
+.header__simpsons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.header__simpsons > img {
+  width: 30%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0 0 0;
+}
+
+/* Quote Card */
+
+.quoteCard {
+  border-radius: 47px;
+  background: var(--lightBlue);
+  box-shadow: 12px 12px 20px rgb(71, 132, 161),
+    -12px -12px 20px rgb(153, 255, 255);
+  margin: 20px;
+  padding: 20px;
+  width: 500px;
+  position: relative;
+}
+
+.quoteCard__quote {
+  font-size: 1.2em;
+}
+
+.quoteCard__quote::before,
+.quoteCard__quote::after {
+  font-weight: bolder;
+  padding: 0 5px;
+}
+
+.quoteCard__quote::before {
+  content: "\201c";
+}
+
+.quoteCard__quote::after {
+  content: "\201d";
+}
+
+.quoteCard__name {
+  font-style: italic;
+  font-family: "merienda-bold";
+}
+
+.quoteCard__name::before {
+  content: "\2013";
+  padding: 0 10px;
+}
+
+.quoteCard__img {
+  width: auto;
+  max-height: 300px;
+}
+
+/* handling quote card layout based on character direction */
+.quoteCard > .Right {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.quoteCard > .Left {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Buttons */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.btn__delete {
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* filter and refresh button */
+.topBar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-color: var(--lightBlue);
+  box-shadow: 0px 14px 11px -9px rgba(30, 30, 60, 0.25);
+  height: 50px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn__refresh {
+  border-radius: 47px;
+  box-shadow: -4px 4px 0px 0px rgba(30, 30, 60, 0.97);
+  background-color: var(--yellow);
+  border: solid 3px black;
+  font-size: 1.3em;
+  font-family: "merienda-bold";
+  padding: 0 10px;
+  margin: 0 10px;
+}
+
+.filterBox {
+  border-radius: 47px;
+  box-shadow: -4px 4px 0px 0px rgba(30, 30, 60, 0.97);
+  background-color: var(--white);
+  border: solid 3px black;
+  height: 45px;
+  width: 300px;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+
+.filterBox::placeholder {
+  font-family: "merienda-regular";
+}
+
+@media screen and (max-width: 600px) {
+  .btn__refresh {
+    left: 30%;
+    font-size: 0.7em;
   }
-  to {
-    transform: rotate(360deg);
+
+  .quoteCard__img {
+    width: auto;
+    max-height: 200px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .btn__refresh {
+    left: 20%;
+    font-size: 0.5em;
   }
 }
