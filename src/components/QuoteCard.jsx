@@ -5,7 +5,7 @@ import Quote from "./Quote";
 import Delete from "./Delete";
 
 class QuoteCard extends Component {
-  handleData = () => {
+  render() {
     return this.props.data.map((item, index) => {
       return (
         <div key={index} className="quoteCard">
@@ -22,10 +22,6 @@ class QuoteCard extends Component {
         </div>
       );
     });
-  };
-
-  render() {
-    return <>{this.handleData()}</>;
   }
 }
 

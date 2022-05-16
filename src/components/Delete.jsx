@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import deleteIcon from "../images/delete-button.png";
 
 class Delete extends Component {
-  state = {};
-
   render() {
     return (
       <>

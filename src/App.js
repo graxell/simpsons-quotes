@@ -12,6 +12,7 @@ class App extends Component {
     this.getDataFromApi();
   }
 
+  // API call
   getDataFromApi = async () => {
     try {
       const response = await axios.get(
@@ -24,18 +25,19 @@ class App extends Component {
     }
   };
 
+  // Delete button
   handleDelete = (index) => {
     const updatedData = [...this.state.data];
     updatedData.splice(index, 1);
     this.setState({ data: updatedData });
   };
 
+  //Input
   handleInput = (e) => {
     this.setState({ input: e.target.value });
   };
 
   render() {
-    console.log(this.state);
     let filterData = [...this.state.data];
 
     if (this.state.input) {
@@ -53,8 +55,7 @@ class App extends Component {
     return (
       <>
         <h1 className="header__simpsons">
-          {" "}
-          <img src={SimpsonsHeader} alt="The Simpsons title header" />{" "}
+          <img src={SimpsonsHeader} alt="The Simpsons title header" />
         </h1>
 
         <div className="topBar">
