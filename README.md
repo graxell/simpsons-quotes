@@ -6,6 +6,8 @@ A simple Simpsons Quotes generator using the API : http://thesimpsonsquoteapi.gl
 
 This React app was built using class based components.
 
+Link to live demo: https://thesimpsons-quotes.netlify.app
+
 
 
 ## Available Scripts
