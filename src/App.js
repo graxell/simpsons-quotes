@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import QuoteCard from "./components/QuoteCard";
 import Refresh from "./components/Refresh";
+import SimpsonsHeader from "./images/simpsons-header.png";
 import "./App.css";
 
 class App extends Component {
